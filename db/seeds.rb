@@ -7,8 +7,8 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails51 for more book information.
 #---
 # encoding: utf-8
-Product.delete_all
-Product.create!(title: 'Rails, Angular, Postgres, and Bootstrap',
+Post.delete_all
+Post.create!(title: 'Rails, Angular, Postgres, and Bootstrap',
   description:
     %{<p>
       <em>Powerful, Effective, and Efficient Full-Stack Web Development</em>
@@ -24,7 +24,7 @@ Product.create!(title: 'Rails, Angular, Postgres, and Bootstrap',
   image_url: 'dcbang.jpg',    
   price: 45.00)
 # . . .
-Product.create!(title: 'Seven Mobile Apps in Seven Weeks',
+Post.create!(title: 'Seven Mobile Apps in Seven Weeks',
   description:
     %{<p>
       <em>Native Apps, Multiple Platforms</em>
@@ -38,7 +38,7 @@ Product.create!(title: 'Seven Mobile Apps in Seven Weeks',
   price: 26.00)
 # . . .
 
-Product.create!(title: 'Ruby Performance Optimization',
+Post.create!(title: 'Ruby Performance Optimization',
   description:
     %{<p>
       <em>Why Ruby Is Slow, and How to Fix It</em> 
