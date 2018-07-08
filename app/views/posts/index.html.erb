@@ -7,7 +7,8 @@
 <table>
   <thead>
     <tr>
-      <th>title</th>
+      <th>Image</th>
+      <th>Title</th>
       <th>Description</th>
       <th>Image url</th>
       <th>Price</th>
@@ -20,7 +21,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-        <td class="image">
+        <td>
           <%= image_tag(post.image_url.thumb.url, alt: 'Image') if post.image_url? %>
         </td>
 
