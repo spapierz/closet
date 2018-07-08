@@ -27,9 +27,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -64,3 +61,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave', '~> 1.0'
 # Mini-magick https://github.com/minimagick/minimagick
 gem 'mini_magick'
+# Acts as taggable on is a tagging system for categories https://www.rubydoc.info/gems/acts-as-taggable-on/6.0.0
+gem 'acts-as-taggable-on', '~> 5.0'
