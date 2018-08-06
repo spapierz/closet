@@ -33,6 +33,13 @@ gem 'carrierwave', '~> 1.0'
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
 
+# Simple Calendar
+gem "simple_calendar", "~> 2.0"
+
+gem 'bootstrap'
+
+gem 'jquery-rails'
+
 # Allows tagging
 gem 'acts-as-taggable-on', '~> 6.0'
 
