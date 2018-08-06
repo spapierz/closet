@@ -31,12 +31,24 @@
 
 </table>
 
-<div>
-  <%= calendar number_of_days: 4 do |date| %>
-    <%= date %>
-  <% end %>
-</div>
-
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+<br>
+<br>
+
+<div>
+<!--   <%= calendar number_of_days: 4 do |date| %>
+    <%= date %>
+  <% end %> -->
+
+  <%= calendar number_of_days: 7 do |date, outifts| %>
+  <%= date %>
+
+  <% outifts.each do |outift| %>
+    <div>
+      <%= outift.name %>
+    </div>
+  <% end %>
+<% end %>
+</div>

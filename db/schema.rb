@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_27_012818) do
+ActiveRecord::Schema.define(version: 2018_08_06_033439) do
+
+  create_table "outfits", force: :cascade do |t|
+    t.string "name"
+    t.datetime "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "caption"
