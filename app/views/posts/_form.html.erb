@@ -12,13 +12,18 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :image_url %>
+    <%= form.file_field :image_url %>
+  </div>
+
+  <div class="field">
     <%= form.label :caption %>
     <%= form.text_field :caption %>
   </div>
 
   <div class="field">
-    <%= form.label :image_url %>
-    <%= form.file_field :image_url %>
+    <%= form.label :tags %>
+    <%= form.text_field :tag_list %>
   </div>
 
   <div class="actions">
