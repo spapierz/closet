@@ -66,3 +66,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+# Upload images https://rubygems.org/gems/carrierwave/versions/0.11.2
+gem 'carrierwave', '~> 1.0'
+# Mini-magick https://github.com/minimagick/minimagick
+gem 'mini_magick'
+# Acts as taggable on is a tagging system for categories https://www.rubydoc.info/gems/acts-as-taggable-on/6.0.0
+gem 'acts-as-taggable-on', '~> 5.0'

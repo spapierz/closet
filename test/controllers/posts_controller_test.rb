@@ -16,11 +16,19 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create post" do
+<<<<<<< HEAD
     assert_difference('Post.count') do
       post posts_url, params: { post: { caption: @post.caption, image_url: @post.image_url } }
     end
 
     assert_redirected_to post_url(Post.last)
+=======
+    assert_difference('post.count') do
+      post posts_url, params: { post: {  title: @post. title, description: @post.description, image_url: @post.image_url, price: @post.price } }
+    end
+
+    assert_redirected_to post_url(post.last)
+>>>>>>> 539da29e6909f39c7eaced37915b962908687be6
   end
 
   test "should show post" do
@@ -34,12 +42,20 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update post" do
+<<<<<<< HEAD
     patch post_url(@post), params: { post: { caption: @post.caption, image_url: @post.image_url } }
+=======
+    patch post_url(@post), params: { post: {  title: @post. title, description: @post.description, image_url: @post.image_url, price: @post.price } }
+>>>>>>> 539da29e6909f39c7eaced37915b962908687be6
     assert_redirected_to post_url(@post)
   end
 
   test "should destroy post" do
+<<<<<<< HEAD
     assert_difference('Post.count', -1) do
+=======
+    assert_difference('post.count', -1) do
+>>>>>>> 539da29e6909f39c7eaced37915b962908687be6
       delete post_url(@post)
     end
 

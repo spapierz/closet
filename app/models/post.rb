@@ -7,3 +7,4 @@ class Post < ApplicationRecord
 	validates :caption, :image_url, presence: true
 
 end
+
