@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @post.tag_list = "shirt, pants, shoes, accessories"
   end
 
   # GET /posts/1/edit
