@@ -38,17 +38,27 @@
 <br>
 
 <div>
-<!--   <%= calendar number_of_days: 4 do |date| %>
-    <%= date %>
-  <% end %> -->
 
-  <%= calendar number_of_days: 7 do |date, outifts| %>
-  <%= date %>
-
-  <% outifts.each do |outift| %>
-    <div>
-      <%= outift.name %>
-    </div>
+  <%= calendar number_of_days: 7, events: @outfits do |date, outfits| %>
+    <%= date %> 
+      <% outfits.each do |outfit| %>
+        <div class="outfit" data-id='<%= outfit.id %>'>
+          <%= outfit.name %>
+          <%= link_to 'go to', outfit_path(outfit.id) %>          
+        </div>
+      <% end %>
   <% end %>
-<% end %>
+
 </div>
+
+<% content_for :scripts do %>
+  <script>
+    var outfits = document.querySelector('simple-calendar');
+
+    document.addEventListener('click', function(event) {
+      if (event.target.matches('.day')) {
+        window.location = 'outfits/1';
+      }
+    }, false);
+  </script>
+<% end %>

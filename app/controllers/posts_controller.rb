@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @outfits = Outfit.all
   end
 
   # GET /posts/1
@@ -13,11 +14,11 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
       @related_posts = @post.find_related_tags
   end
-
+  # polymorphic association
   # GET /posts/new
   def new
     @post = Post.new
-    @post.tag_list = "shirt, pants, shoes, accessories"
+    @post.tag_list = "shirt, pants, shoes, accessories" 
   end
 
   # GET /posts/1/edit
