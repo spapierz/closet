@@ -13,19 +13,23 @@
   </thead>
 
   <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.caption %></td>
-        <td><%= image_tag(post.image.thumb_medium) if post.image? %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td>
-          <% post.tags.each do |tag| %>
-            <%= link_to tag.name, tag_path(tag) %>
-          <% end %>
-        </td>
-      </tr>
+    <% cache @posts do %>
+      <% @posts.each do |post| %>
+        ​<% cache post do %>​
+          <tr>
+            <td><%= post.caption %></td>
+            <td><%= image_tag(post.image.thumb_medium) if post.image? %></td>
+            <td><%= link_to 'Show', post %></td>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td>
+              <% post.tags.each do |tag| %>
+                <%= link_to tag.name, tag_path(tag) %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
     <% end %>
   </tbody>
 
@@ -53,11 +57,10 @@
 
 <% content_for :scripts do %>
   <script>
-    var outfits = document.querySelector('simple-calendar');
 
     document.addEventListener('click', function(event) {
       if (event.target.matches('.day')) {
-        window.location = 'outfits/1';
+        window.location = 'outfits';
       }
     }, false);
   </script>

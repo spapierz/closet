@@ -5,6 +5,9 @@ class OutfitsController < ApplicationController
   # GET /outfits.json
   def index
     @outfits = Outfit.all
+    @shirts = Post.tagged_with('shirt')
+    @pants = Post.tagged_with('pants')
+    @shoes = Post.tagged_with('shoes')
   end
 
   # GET /outfits/1
