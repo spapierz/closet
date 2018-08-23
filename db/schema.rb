@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_06_033439) do
+ActiveRecord::Schema.define(version: 2018_08_15_031129) do
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "outfit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["outfit_id"], name: "index_line_items_on_outfit_id"
+    t.index ["post_id"], name: "index_line_items_on_post_id"
+  end
 
   create_table "outfits", force: :cascade do |t|
     t.string "name"

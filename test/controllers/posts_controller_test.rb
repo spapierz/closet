@@ -45,4 +45,22 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to posts_url
   end
+
+  test "can't delete post in outfit" do 
+    assert_difference('Post.count', 0) do
+      delete post_url(posts(:two))
+    end
+
+    assert_redirected_to posts_url
+  end
+
+  test "should destroy product" do 
+    assert_difference('Post.count', -1) do 
+      delete post_url(@post)
+    end
+
+    assert_redirected_to posts_url
+  end
+  
+
 end
