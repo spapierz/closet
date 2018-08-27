@@ -5,20 +5,17 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
-    @outfits = Outfit.all
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
       @post = Post.find(params[:id])
-      @related_posts = @post.find_related_tags
   end
   # polymorphic association
   # GET /posts/new
   def new
     @post = Post.new
-    @post.tag_list = "shirt, pants, shoes, accessories" 
   end
 
   # GET /posts/1/edit
@@ -65,14 +62,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def tagged
-    if params[:tag].present?
-      @posts = Post.tagged_with(params[:tag])
-    else
-      @posts = Post.all
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -81,6 +70,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:caption, :image_url, :tag_list)
+      params.require(:post).permit(:caption, :image_url)
     end
 end

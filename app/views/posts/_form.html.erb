@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :tags %>
-    <%= form.select :tag_list, options_for_select([["Select One", ""], post.tag_list[0], post.tag_list[1], post.tag_list[2], post.tag_list[3]]), :class => 'genForm_dropBox' %>
+    <%= form.select :tag_list, options_for_select([["Select One", ""], :shirt, :pants, :shoes, :accessories]), :class => 'genForm_dropBox' %>
   </div>
 
   <div class="actions">
